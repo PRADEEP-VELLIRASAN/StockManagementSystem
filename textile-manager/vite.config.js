@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000', // Your backend server
+        target: 'https://stockmanagementsystem-d5kp.onrender.com', // Your backend server
         changeOrigin: true,
         secure: false,
       },
