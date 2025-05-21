@@ -12,7 +12,7 @@ const EmployeeManagement = () => {
 
   // Fetch employees from backend on component mount
   useEffect(() => {
-    fetch('http://localhost:5000/api/employees')
+    fetch('https://stockmanagementsystem-d5kp.onrender.com/api/employees')
       .then(res => res.json())
       .then(data => setEmployees(data))
       .catch(err => console.error('Error fetching employees:', err));
@@ -38,7 +38,7 @@ const EmployeeManagement = () => {
     if (!newEmployee.name || !newEmployee.role || !newEmployee.contact) return;
 
     try {
-      const res = await fetch('http://localhost:5000/api/employees', {
+      const res = await fetch('https://stockmanagementsystem-d5kp.onrender.com/api/employees', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newEmployee),
@@ -55,7 +55,7 @@ const EmployeeManagement = () => {
   // Handle deleting an employee
   const handleDeleteEmployee = async (id, name, role) => {
     try {
-      await fetch(`http://localhost:5000/api/employees/${id}`, {
+      await fetch(`https://stockmanagementsystem-d5kp.onrender.com/api/employees/${id}`, {
         method: 'DELETE',
       });
       setEmployees(employees.filter(employee => employee._id !== id));
