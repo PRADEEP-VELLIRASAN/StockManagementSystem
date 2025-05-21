@@ -23,7 +23,7 @@ const ResetPassword = () => {
       setLoading(true);
       setError("");
       setSuccess("");
-      const res = await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, { password });
+      const res = await axios.post(`https://stockmanagementsystem-d5kp.onrender.com/api/auth/reset-password/${token}`, { password });
       setSuccess(res.data.message);
       setTimeout(() => navigate("/login"), 2000);
     } catch (err) {
